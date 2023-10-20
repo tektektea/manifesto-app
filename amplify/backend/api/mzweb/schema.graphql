@@ -1,0 +1,35 @@
+type Constituency @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  districtID: ID! @index(name: "byDistrict")
+  candidates: [Candidate] @manyToMany(relationName: "CandidateConstituency")
+}
+
+type District @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  Constituencies: [Constituency] @hasMany(indexName: "byDistrict", fields: ["id"])
+}
+
+type Candidate @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  avatar: String
+  partyID: ID! @index(name: "byParty")
+  Constituencies: [Constituency] @manyToMany(relationName: "CandidateConstituency")
+}
+
+type Manifesto @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String
+}
+
+type Party @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  logo: String
+  Manifesto: Manifesto @hasOne
+  Candidates: [Candidate] @hasMany(indexName: "byParty", fields: ["id"])
+}
+ 

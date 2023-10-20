@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "mzweb",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
