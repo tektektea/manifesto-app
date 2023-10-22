@@ -16,8 +16,9 @@ type Candidate @model @auth(rules: [{allow: public}]) {
   name: String
   description: String
   avatar: String
-  partyID: ID! @index(name: "byParty")
+  partyID: ID @index(name: "byParty")
   Constituencies: [Constituency] @manyToMany(relationName: "CandidateConstituency")
+  Party: Party @belongsTo(fields: ["partyID"])
 }
 
 type Manifesto @model @auth(rules: [{allow: public}]) {
@@ -31,4 +32,5 @@ type Party @model @auth(rules: [{allow: public}]) {
   logo: String
   Manifesto: Manifesto @hasOne
   Candidates: [Candidate] @hasMany(indexName: "byParty", fields: ["id"])
-} 
+}
+ 

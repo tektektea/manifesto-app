@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="text-grey-5">
     <div class="flex justify-between items-center">
-      <div class="text-grey-5 text-lg text-bold">party Name</div>
+      <div class="text-grey-5 text-lg text-bold">{{$route.params.name}}</div>
       <q-select />
     </div>
     <br/>
@@ -13,7 +13,9 @@
             </q-avatar>
             <div class="q-ml-md">
               <div class="text-md text-bold">{{item?.name}}</div>
-              <div class="text-grey-6">{{item?.description}}</div>
+              <div class="flex q-gutter-sm">
+                <q-chip square color="accent"  v-for="temp in item?.Constituencies?.items" :label="temp?.constituency?.name"/>
+              </div>
             </div>
           </div>
           <q-card-actions>

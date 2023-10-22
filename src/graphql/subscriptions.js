@@ -114,6 +114,15 @@ export const onCreateCandidate = /* GraphQL */ `
         nextToken
         __typename
       }
+      Party {
+        id
+        name
+        logo
+        createdAt
+        updatedAt
+        partyManifestoId
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -134,6 +143,15 @@ export const onUpdateCandidate = /* GraphQL */ `
         nextToken
         __typename
       }
+      Party {
+        id
+        name
+        logo
+        createdAt
+        updatedAt
+        partyManifestoId
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -152,6 +170,15 @@ export const onDeleteCandidate = /* GraphQL */ `
       partyID
       Constituencies {
         nextToken
+        __typename
+      }
+      Party {
+        id
+        name
+        logo
+        createdAt
+        updatedAt
+        partyManifestoId
         __typename
       }
       createdAt

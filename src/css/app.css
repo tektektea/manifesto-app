@@ -3,6 +3,9 @@
 .app-background{
   background: #2d3034;
 }
+.sized-btn{
+  min-width: 120px;
+}
 .text-lg{
   font-size: 28px;
 }

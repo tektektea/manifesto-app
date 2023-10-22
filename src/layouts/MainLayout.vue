@@ -1,24 +1,13 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header elevated class="bg-primary text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Mizoram Election 2023
+    <q-header height-hint="70" style="height: 90px" elevated class="bg-primary text-white">
+      <q-toolbar style="height: 70px">
+        <q-toolbar-title class="text-weight-bold">
+          <q-btn @click="$router.back()" v-if="!isHome" class="q-px-none" flat icon="chevron_left" label="Back" no-caps/>
+          <span class="q-ml-sm text-md">Mizoram Election 2023</span>
         </q-toolbar-title>
-        <q-btn-dropdown rounded flat dropdown-icon="more_vert">
-          <q-list>
-            <q-item>
-              <q-item-section> About Us</q-item-section>
-            </q-item>
-            <q-item @click=exitSystem>
-            <q-item-section>Exit</q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
+
       </q-toolbar>
     </q-header>
 
@@ -26,26 +15,27 @@
       <router-view/>
     </q-page-container>
 
-    <q-footer style="min-height: 70px" elevated class="bg-dark text-grey-5 column justify-center">
+    <q-footer v-if="isHome" style="min-height: 70px" elevated class="bg-dark text-grey-5 column justify-center">
       <q-toolbar class="flex justify-around items-center">
 
-        <q-item clickable @click="$router.replace({name:'home'})">
+        <q-item :active="$route.name==='home'" clickable @click="$router.replace({name:'home'})">
           <q-item-section>
-            <q-icon size="24px" name="o_home"></q-icon>
+            <div class="text-center">
+              <q-icon class="text-center" size="24px" name="o_home"></q-icon>
+              <div class="text-sm text-bold">Party</div>
+            </div>
           </q-item-section>
         </q-item>
 
-        <q-item clickable @click="$router.replace({name:'candidates'})">
+        <q-item :active="$route.name==='candidates'" clickable @click="$router.replace({name:'candidates'})">
           <q-item-section>
-            <q-icon size="24px" name="person_book"></q-icon>
+            <div class="text-center">
+              <q-icon class="text-center" size="24px" name="person"></q-icon>
+              <div class="text-sm text-bold">Candidates</div>
+            </div>
           </q-item-section>
         </q-item>
 
-        <q-item>
-          <q-item-section>
-            <q-icon size="24px" name="delete"></q-icon>
-          </q-item-section>
-        </q-item>
       </q-toolbar>
     </q-footer>
 
@@ -53,10 +43,12 @@
 </template>
 
 <script setup>
-import {onMounted} from "vue";
+import {computed, onMounted} from "vue";
 import {useMasterData} from "stores/master-store";
+import {useRoute} from "vue-router";
 
 const masterStore = useMasterData();
+const isHome=computed(()=>useRoute().name === 'home' || useRoute().name === 'candidates')
 const exitSystem=e=>{
 
 }

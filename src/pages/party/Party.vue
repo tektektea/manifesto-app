@@ -8,7 +8,7 @@
     </div>
   </div>
   <br/>
-  <q-btn :to="{name:'party:candidates',params:{party:$route.params.id}}" class="full-width" outline label="Candidates te enna" no-caps/>
+  <q-btn :to="{name:'party:candidates',params:{party:$route.params.id,name:state.party?.name}}" class="full-width" outline label="Candidates te enna" no-caps/>
   <br/>
   <br/>
   <div class="text-center text-md text-grey-5 text-bold">Manifesto</div>

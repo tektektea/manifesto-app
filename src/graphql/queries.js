@@ -108,7 +108,22 @@ export const getCandidate = /* GraphQL */ `
       avatar
       partyID
       Constituencies {
+        items {
+          constituency {
+            id
+            name
+          }
+        }
         nextToken
+        __typename
+      }
+      Party {
+        id
+        name
+        logo
+        createdAt
+        updatedAt
+        partyManifestoId
         __typename
       }
       createdAt
@@ -130,9 +145,17 @@ export const listCandidates = /* GraphQL */ `
         description
         avatar
         partyID
-        Constituencies {
-          nextToken
-          __typename
+        Party {
+          id
+          name
+        }
+        Constituencies{
+          items {
+            constituency {
+              id
+              name
+            }
+          }
         }
         createdAt
         updatedAt
@@ -162,6 +185,13 @@ export const candidatesByPartyID = /* GraphQL */ `
         id
         name
         description
+        Constituencies{
+          items {
+            constituency {
+              name
+            }
+          }
+        }
         avatar
         partyID
         createdAt
