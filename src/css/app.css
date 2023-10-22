@@ -1,1 +1,15 @@
 /* app global css */
+
+.app-background{
+  background: #2d3034;
+}
+.text-lg{
+  font-size: 28px;
+}
+.text-md{
+  font-size: 18px;
+}
+
+.text-sm{
+  font-size: 12px;
+}

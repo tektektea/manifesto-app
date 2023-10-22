@@ -31,5 +31,4 @@ type Party @model @auth(rules: [{allow: public}]) {
   logo: String
   Manifesto: Manifesto @hasOne
   Candidates: [Candidate] @hasMany(indexName: "byParty", fields: ["id"])
-}
- 
+} 

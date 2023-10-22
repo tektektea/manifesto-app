@@ -22,22 +22,22 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="app-background text-grey-5">
       <router-view/>
     </q-page-container>
 
-    <q-footer bordered class="bg-white text-accent">
+    <q-footer style="min-height: 70px" elevated class="bg-dark text-grey-5 column justify-center">
       <q-toolbar class="flex justify-around items-center">
 
-        <q-item>
+        <q-item clickable @click="$router.replace({name:'home'})">
           <q-item-section>
-            <q-icon size="24px" name="home"></q-icon>
+            <q-icon size="24px" name="o_home"></q-icon>
           </q-item-section>
         </q-item>
 
-        <q-item>
+        <q-item clickable @click="$router.replace({name:'candidates'})">
           <q-item-section>
-            <q-icon size="24px" name="edit"></q-icon>
+            <q-icon size="24px" name="person_book"></q-icon>
           </q-item-section>
         </q-item>
 
@@ -53,9 +53,15 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+import {useMasterData} from "stores/master-store";
 
-
+const masterStore = useMasterData();
 const exitSystem=e=>{
-  
+
 }
+
+onMounted(()=>{
+  masterStore.fetchConstituencies();
+})
 </script>
