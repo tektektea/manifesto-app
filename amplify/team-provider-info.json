@@ -10,6 +10,17 @@
       "StackName": "amplify-mzweb-dev-145145",
       "StackId": "arn:aws:cloudformation:ap-south-1:053600857685:stack/amplify-mzweb-dev-145145/94ab2de0-6f2a-11ee-9dc3-023ce5bb8104",
       "AmplifyAppId": "d3cla0aq6qc76e"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3cla0aq6qc76e",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "mzweb": {}
+      }
     }
   }
 }

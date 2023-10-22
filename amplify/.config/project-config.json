@@ -9,7 +9,7 @@
     "framework": "vue",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "dist",
+      "DistributionDir": "dist/spa",
       "BuildCommand": "quasar build",
       "StartCommand": "quasar de"
     }
