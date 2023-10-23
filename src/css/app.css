@@ -16,3 +16,37 @@
 .text-sm{
   font-size: 12px;
 }
+
+@media (max-width: 599px) {
+  .container{
+    padding: 8px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media (max-width:1439px) {
+  .container {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media (max-width: 3919px) {
+  .container {
+    max-width: 1250px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}

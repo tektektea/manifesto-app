@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MzManifesto</string>
+    <string name="title_activity_main">MzManifesto</string>
+    <string name="package_name">com.dhiinternet.mizomanifesto</string>
+    <string name="custom_url_scheme">com.dhiinternet.mizomanifesto</string>
+</resources>
