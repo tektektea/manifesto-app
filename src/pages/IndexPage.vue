@@ -4,7 +4,6 @@
       <div v-for="item in state.parties" :key="item.id" class="col-6">
         <q-card class="party-card relative-position" @click="handlePartyClick(item)">
           <q-img :ratio="1" :src="item.logo"></q-img>
-          <div class="text-lg text-weight-bolder absolute-center">{{ item?.name }}</div>
         </q-card>
       </div>
     </div>
@@ -15,6 +14,8 @@ import {onMounted, reactive} from "vue";
 import {API} from 'aws-amplify';
 import {listParties} from '../graphql/queries'
 import {useRouter} from "vue-router";
+
+// import { AdMobPlus, BannerAd } from '@admob-plus/capacitor'/
 
 const router = useRouter();
 const state = reactive({
@@ -27,15 +28,29 @@ const fetchParties = async () => {
   state.parties = res?.data?.listParties?.items || [];
 }
 
-const handlePartyClick = (item) => {
-  router.push({
-    name: 'party:detail', params:{
+const handlePartyClick = async (item) => {
+  await router.push({
+    name: 'party:detail', params: {
       id: item.id
     }
   })
+
+
 }
-onMounted(() => {
-  fetchParties();
+onMounted(async () => {
+  await fetchParties();
+  // (async () => {
+  //   const banner = new BannerAd({
+  //     adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+  //   })
+  //   await banner.show()
+  //
+  //   AdMobPlus.addListener('banner.impression', async () => {
+  //     await banner.hide()
+  //   })
+  // })()
+
+
 })
 
 </script>

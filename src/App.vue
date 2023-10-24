@@ -9,9 +9,11 @@ import { defineComponent } from 'vue'
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
+// import {AdMob} from "@capacitor-community/admob";
 Amplify.configure(awsExports);
 
 export default defineComponent({
-  name: 'App'
+  name: 'App',
+
 })
 </script>

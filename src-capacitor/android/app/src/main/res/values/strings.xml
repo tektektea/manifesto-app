@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">MzManifesto</string>
     <string name="title_activity_main">MzManifesto</string>
-    <string name="package_name">com.dhiinternet.mizomanifesto</string>
-    <string name="custom_url_scheme">com.dhiinternet.mizomanifesto</string>
+    <string name="package_name">inthlan.mizoram</string>
+    <string name="custom_url_scheme">inthlan.mizoram</string>
 </resources>

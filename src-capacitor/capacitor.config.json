@@ -1,5 +1,8 @@
 {
-  "appId": "com.dhiinternet.mizomanifesto",
+  "appId": "inthlan.mizoram",
   "appName": "MzManifesto",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
 }
